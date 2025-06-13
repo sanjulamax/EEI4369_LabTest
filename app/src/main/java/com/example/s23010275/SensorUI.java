@@ -27,7 +27,7 @@ public class SensorUI extends AppCompatActivity implements SensorEventListener {
 
     private boolean isTemperatureSensorAvailable;
     private float currentTemperature = 0.0f; // Store the current temperature
-    private final float TEMPERATURE_THRESHOLD = 35.0f; //  threshold in Celsius
+    private final float TEMPERATURE_THRESHOLD = 75.0f; //  threshold in Celsius
 
     private MediaPlayer mediaPlayer; // Declare MediaPlayer instanceSAVINDU
     private boolean isSoundPlaying = false; // Flag to prevent sound from playing repeatedly
