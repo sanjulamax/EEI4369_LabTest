@@ -1,8 +1,8 @@
 package com.example.s23010275;
-import androidx.appcompat.app.AlertDialog; // For popup
+import androidx.appcompat.app.AlertDialog;
 
 import android.content.Context;
-import android.content.DialogInterface; // For popup
+import android.content.DialogInterface;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -10,7 +10,7 @@ import android.hardware.SensorManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.widget.TextView;
-import android.widget.Toast; // Alternative to popup for simpler messages
+import android.widget.Toast;
 
 import android.os.Bundle;
 
