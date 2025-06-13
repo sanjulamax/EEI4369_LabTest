@@ -34,12 +34,7 @@ public class RegisterActivity extends AppCompatActivity {
         fullNameEditText = findViewById(R.id.textInputLayout2).findViewById(R.id.fname);
         passwordEditText = findViewById(R.id.editTextTextPassword);
 
-        // Adjust insets for padding
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
+
 
         // Register button click listener
         Button registerButton = findViewById(R.id.button);

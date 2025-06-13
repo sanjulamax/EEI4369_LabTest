@@ -22,7 +22,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class SensorUI extends AppCompatActivity implements SensorEventListener {
     private SensorManager sensorManager;
-    private Sensor temperatureSensor; // Could be ambient, or you might look for battery temp
+    private Sensor temperatureSensor;
     private TextView temperatureTextView;
 
     private boolean isTemperatureSensorAvailable;
@@ -43,15 +43,13 @@ public class SensorUI extends AppCompatActivity implements SensorEventListener {
         sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
 
         mediaPlayer = MediaPlayer.create(this, R.raw.warning);
-        // Optional: Set up a completion listener to reset the flag when sound finishes
+        // Set up a completion listener to reset the flag when sound finishes
         if (mediaPlayer != null) {
             mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
                 @Override
                 public void onCompletion(MediaPlayer mp) {
                     isSoundPlaying = false;
-                    // If you want the sound to be replayable immediately after finishing,
-                    // you might need to mp.prepare() or re-create it if it's not looping.
-                    // For a one-shot alert, this is usually fine.
+
                 }
             });
         } else {
@@ -65,14 +63,11 @@ public class SensorUI extends AppCompatActivity implements SensorEventListener {
             isTemperatureSensorAvailable = true;
             Toast.makeText(this, "Ambient Temperature Sensor found!", Toast.LENGTH_SHORT).show();
         } else {
-            // Fallback or alternative: Check for Battery Temperature (requires a BroadcastReceiver setup)
-            // For simplicity, we'll just indicate the primary sensor isn't available.
-            // A more robust app might then try to get battery temperature.
+            // If the sensor is not available, set a default message
             temperatureTextView.setText("Ambient Temperature Sensor: Not Available");
             isTemperatureSensorAvailable = false;
             Toast.makeText(this, "Ambient Temperature Sensor not available.", Toast.LENGTH_LONG).show();
-            // You could try to register a BroadcastReceiver for ACTION_BATTERY_CHANGED here
-            // to get battery temperature as a fallback.
+
         }
     }
 
@@ -125,9 +120,7 @@ public class SensorUI extends AppCompatActivity implements SensorEventListener {
     }
 
     private void showTemperatureAlertPopup(float temp) {
-        // Ensure popup is shown only once or with some logic to prevent spamming
-        // For simplicity, this shows it every time it crosses the threshold while the sensor updates.
-        // A real app would need more sophisticated logic here.
+        // Create and show an alert dialog with the temperature information
 
         new AlertDialog.Builder(this)
                 .setTitle("Temperature Alert!")
