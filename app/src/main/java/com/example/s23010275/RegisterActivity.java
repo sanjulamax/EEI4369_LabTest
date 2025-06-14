@@ -16,7 +16,6 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class RegisterActivity extends AppCompatActivity {
-
     EditText usernameEditText, fullNameEditText, passwordEditText;
     dataBase databaseHelper;
 
@@ -33,7 +32,6 @@ public class RegisterActivity extends AppCompatActivity {
         usernameEditText = findViewById(R.id.textInputLayout).findViewById(R.id.uname);
         fullNameEditText = findViewById(R.id.textInputLayout2).findViewById(R.id.fname);
         passwordEditText = findViewById(R.id.editTextTextPassword);
-
 
 
         // Register button click listener
