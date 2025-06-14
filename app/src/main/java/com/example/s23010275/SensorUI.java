@@ -11,9 +11,7 @@ import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import android.os.Bundle;
-
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
